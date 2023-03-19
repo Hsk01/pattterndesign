@@ -1,0 +1,16 @@
+﻿Instalar desde nuget:
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+
+Abrir la consola para scaffolding:
+Tools -> Nuget Package Manager -> Package Manager Console
+
+* Seleccionar el proyecto como de inicio en el Solution Explorer y en la consola.
+
+Comando:
+Scaffold-DbContext "Server=localhost; Database=DesignPatterns; Trusted_Connection=True; Trust Server Certificate=true;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+Comando para scaffold: Scaffold-DbContext
+Seguido de la connstring
+Proveedor
+Directorio destino de las clases: -OutputDir MiCarpeta
