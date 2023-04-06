@@ -1,12 +1,14 @@
 ﻿using DesignPatterns.BuilderPattern;
 using DesignPatterns.DependencyInjection;
 using DesignPatterns.Models.FactoryMethod;
+using DesignPatterns.StatePattern;
 using System.Runtime.CompilerServices;
 using System.Security.Principal;
 
 //FactoryMethod();
 //DependencyInjection();
-Builder();
+//Builder();
+State();
 
 Console.ReadLine();
 
@@ -51,4 +53,20 @@ static void Builder()
 
     PreparedDrink myPreparedDrink = builder.GetPreparedDrink();
     Console.WriteLine(myPreparedDrink.Result);
+}
+
+static void State()
+{
+    var customerContext = new CustomerContext();
+    customerContext.Request(300);
+    Console.WriteLine(customerContext.GetState());
+
+    customerContext.Request(100);
+    Console.WriteLine(customerContext.GetState());
+
+    customerContext.Request(500);
+    Console.WriteLine(customerContext.GetState());
+
+    customerContext.Request(200);
+    Console.WriteLine(customerContext.GetState());
 }
